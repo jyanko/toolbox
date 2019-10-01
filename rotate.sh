@@ -58,10 +58,10 @@ if [ -z $1 ] || [ -z $2 ] || [ -z $3 ];then
 	
 	echo "requires params: iam_account, key_id, action (as seen in example commands here), enter a placholder string for key_id when using create mode"
 	echo
-	echo "        $(basename $0) 'jyanko@ltf-dev-8366.iam.gserviceaccount.com' 'b4ff1934cc2d3b61e3694d00f54c0e2c18c578a8' rotate"
-	echo "        $(basename $0) 'jyanko@ltf-dev-8366.iam.gserviceaccount.com' 'b4ff1934cc2d3b61e3694d00f54c0e2c18c578a8' delete"
-	echo "        $(basename $0) 'jyanko@ltf-dev-8366.iam.gserviceaccount.com' 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' create"  
-	echo "        $(basename $0) 'jyanko@ltf-dev-8366.iam.gserviceaccount.com' 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' list" 
+	echo "        $(basename $0) '<user>@<project>.iam.gserviceaccount.com' 'b4fxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx78a8' rotate"
+	echo "        $(basename $0) '<user>@<project>.iam.gserviceaccount.com' 'b4fxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx78a8' delete"
+	echo "        $(basename $0) '<user>@<project>.iam.gserviceaccount.com' 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' create"  
+	echo "        $(basename $0) '<user>@<project>.iam.gserviceaccount.com' 'xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx' list" 
 	echo
 	exit 1
 else
