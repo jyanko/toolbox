@@ -4,16 +4,31 @@ version: 2.1
 orbs:
   welcome: circleci/welcome-orb@0.4.1   # Declare a dependency on the welcome-orb
  
-workflows: 
+# define the jobs: sayHello and sayGoodbye
+jobs:
+  sayHello:
+    docker:
+      - image: cimg/node:14.10.1  # primary container to run job commands
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: echo "hello world"
+  sayGoodbye:
+    docker:
+      - image: cimg/node:14.10.1  # primary container to run job commands
+        auth:
+          username: mydockerhub-user
+          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+    steps:
+      - checkout
+      - run: echo "hello world"
+
+# call the jobs in workflow
+workflows:
   myFlow:
     jobs:
-      - build:
-        docker:
-          - image: cimg/node:14.10.1  # primary container to run job commands
-            auth:
-              username: mydockerhub-user
-              password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-        steps:
-          - checkout
-          - run: echo "hello world"
+      - sayHello
+      - sayGoodbye
       
