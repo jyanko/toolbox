@@ -7,7 +7,7 @@ orbs:
 workflows: 
   myFlow:
     jobs:
-      build:
+      - build:
         docker:
           - image: cimg/node:14.10.1  # primary container to run job commands
             auth:
