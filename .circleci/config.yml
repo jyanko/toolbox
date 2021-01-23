@@ -11,13 +11,13 @@ workflows:
     # Run the welcome/run job in its own container
     jobs:
       - welcome/run
-  build:
-    docker:
-      - image: cimg/node:14.10.1  # primary container to run job commands
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
-    steps:
-      - checkout
-      - run: echo "hello world"
+      - build:
+        docker:
+          - image: cimg/node:14.10.1  # primary container to run job commands
+            auth:
+              username: mydockerhub-user
+              password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+        steps:
+          - checkout
+          - run: echo "hello world"
       
