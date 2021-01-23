@@ -23,7 +23,9 @@ jobs:
           password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
     steps:
       - checkout
-      - run: echo "hello world"
+      - run: echo "goodbye world"
+      - run: echo "PWD:  $(hostname) - $PWD"
+      - run: echo "goodbye, leaving now"
 
 # call the jobs in workflow
 workflows:
