@@ -24,7 +24,7 @@ jobs:
     steps:
       - checkout
       - run: echo "goodbye world"
-      - run: echo "PWD:  $(hostname) - $PWD"
+      - run: echo "PWD = $(hostname) - $PWD"
       - run: echo "goodbye, leaving now"
 
 # call the jobs in workflow
