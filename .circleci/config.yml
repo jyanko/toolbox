@@ -15,6 +15,15 @@ jobs:
     steps:
       - checkout
       - run: echo "hello world"
+  build:
+      docker:
+        - image: alpine:3.7
+      steps:
+        - run:
+            name: The First Step
+            command: |
+              echo 'Hello World!'
+              echo 'This is the delivery pipeline'
   sayGoodbye:
     docker:
       - image: cimg/node:14.10.1  # primary container to run job commands
@@ -26,6 +35,7 @@ jobs:
       - run: echo "goodbye world"
       - run: echo "PWD:  $(hostname) - $PWD"
       - run: echo "goodbye, leaving now"
+
 
 # call the jobs in workflow
 workflows:
