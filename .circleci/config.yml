@@ -6,18 +6,28 @@ orbs:
  
 # define the jobs: sayHello and sayGoodbye
 jobs:
-  sayHello:
+  Hello-World:
     docker:
-      - image: cimg/node:14.10.1  # primary container to run job commands
-        auth:
-          username: mydockerhub-user
-          password: $DOCKERHUB_PASSWORD  # context / project UI env-var reference
+      - image: alpine:3.7
     steps:
       - checkout
-      - run: echo "hello world"
-  build:
+      - run: 
+          name: Hello World
+          command: |
+            echo 'Hello World!'
+            echo 'This is the delivery pipeline'
+  I-Have-Code:
     docker:
-      #- image: alpine:3.7
+      - image: alpine:3.7
+    steps:
+      - checkout
+      - run:
+          name: Code Has Arrived
+          command: |
+            ls -al
+            echo '^^^That should look familiar^^^'
+  Run-With-Node:
+    docker:
       - image: circleci/node:10-browsers
     steps:
       - checkout
@@ -35,6 +45,15 @@ jobs:
           name: Running in a Unique Container
           command: |
             node -v
+  Now-Complete:
+    docker:
+      - image: alpine:3.7
+    steps:
+      - run:
+          name: Approval Complete
+          command: |
+            echo 'Do work once the approval has completed'
+              
   sayGoodbye:
     docker:
       - image: cimg/node:14.10.1  # primary container to run job commands
@@ -52,7 +71,21 @@ jobs:
 workflows:
   myFlow:
     jobs:
-      - sayHello
-      - build
+      - Hello-World
+      - I-Have-Code:
+          requires: 
+            - Hello-World
+      - Run-With-Node:
+          requires: 
+            - Hello-World
+      - Hold-For-Approval:
+          requires: 
+            - Run-With-Node
+            - I-Have-Code
+      - Now-Complete:
+          requires:
+            - Hold-For-Approval
+            
       - sayGoodbye
-      
+          requires:
+            - Now-Complete
