@@ -79,6 +79,7 @@ workflows:
           requires:
             - Hello-World
       - Hold-For-Approval:
+          type: approval
           requires:
             - Run-With-Node
             - I-Have-Code
