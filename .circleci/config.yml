@@ -86,6 +86,6 @@ workflows:
           requires:
             - Hold-For-Approval
             
-      - sayGoodbye
+      - sayGoodbye:
           requires:
             - Now-Complete
