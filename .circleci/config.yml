@@ -73,13 +73,13 @@ workflows:
     jobs:
       - Hello-World
       - I-Have-Code:
-          requires: 
+          requires:
             - Hello-World
       - Run-With-Node:
-          requires: 
+          requires:
             - Hello-World
       - Hold-For-Approval:
-          requires: 
+          requires:
             - Run-With-Node
             - I-Have-Code
       - Now-Complete:
