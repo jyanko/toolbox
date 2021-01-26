@@ -15,9 +15,10 @@ jobs:
     steps:
       - checkout
       - run: echo "hello world"
-  sayMyname:
+  build:
     docker:
-      - image: alpine:3.7
+      #- image: alpine:3.7
+      - image: circleci/node:10-browsers
     steps:
       - checkout
       - run:
@@ -30,6 +31,10 @@ jobs:
           command: |
             ls -al
             echo '^^^That should look familiar^^^'
+      - run:
+          name: Running in a Unique Container
+          command: |
+            node -v
   sayGoodbye:
     docker:
       - image: cimg/node:14.10.1  # primary container to run job commands
@@ -48,6 +53,6 @@ workflows:
   myFlow:
     jobs:
       - sayHello
-      - sayMyname
+      - build
       - sayGoodbye
       
