@@ -19,11 +19,17 @@ jobs:
     docker:
       - image: alpine:3.7
     steps:
+      - checkout
       - run:
           name: The First Step
           command: |
             echo 'Hello World!'
             echo 'This is the delivery pipeline'
+      - run:
+          name: Code Has Arrived
+          command: |
+            ls -al
+            echo '^^^That should look familiar
   sayGoodbye:
     docker:
       - image: cimg/node:14.10.1  # primary container to run job commands
