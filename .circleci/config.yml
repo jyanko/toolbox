@@ -15,7 +15,7 @@ jobs:
     steps:
       - checkout
       - run: echo "hello world"
-  build:
+  buildTheCondo:
     docker:
       - image: alpine:3.7
     steps:
