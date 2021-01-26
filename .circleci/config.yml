@@ -42,5 +42,6 @@ workflows:
   myFlow:
     jobs:
       - sayHello
+      - sayMyname
       - sayGoodbye
       
