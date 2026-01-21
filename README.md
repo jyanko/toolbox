@@ -6,6 +6,7 @@ This repo is a collection of useful scripts and utilities
 .
 ├── check_jira.sh
 ├── gChange.sh
+├── ghi.sh
 ├── gprList.sh
 ├── gprSlug.sh
 ├── gStale.sh
@@ -20,6 +21,7 @@ Descriptions for each utilty script should go here
 
 - check_jira.sh
 - gChange.sh
+- ghi.sh
 - gprList.sh
 - gprSlug.sh
 - gStale.sh
