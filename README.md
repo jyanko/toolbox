@@ -5,6 +5,7 @@ This repo is a collection of useful scripts and utilities
 ❯ tree
 .
 ├── check_jira.sh
+├── gc_keyrotate.sh
 ├── gChange.sh
 ├── ghi.sh
 ├── gprList.sh
@@ -20,6 +21,7 @@ This repo is a collection of useful scripts and utilities
 Descriptions for each utilty script should go here
 
 - check_jira.sh
+- gc_keyrotate.sh
 - gChange.sh
 - ghi.sh
 - gprList.sh
