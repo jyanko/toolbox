@@ -98,9 +98,9 @@ test -z "$PARAM_REPO" && echo "No Repo provided" && displayHelp
 test -z "$PARAM_DATE_START" && echo "No Start Date provided" && displayHelp
 test -z "$PARAM_DATE_END" && echo "No End Date provided" && displayHelp
 
-echo "PARAM_REPO      : $PARAM_REPO"
-echo "PARAM_DATE_START: $PARAM_DATE_START"
-echo "PARAM_DATE_END  : $PARAM_DATE_END"
+echo -e "\033[34mPARAM_REPO      :\033[0m $PARAM_REPO"
+echo -e "\033[34mPARAM_DATE_START:\033[0m $PARAM_DATE_START"
+echo -e "\033[34mPARAM_DATE_END  :\033[0m $PARAM_DATE_END"
 
 DATE_START="$PARAM_DATE_START"
 DATE_END="$PARAM_DATE_END"
@@ -111,15 +111,15 @@ ARRAY_URLS=(
 )
 
 for SCM_URL in ${ARRAY_URLS[*]}; do
-    echo "[PROCESSING]: $SCM_URL"
+    echo -e "\033[34m[PROCESSING]:\033[0m $SCM_URL"
     # strip protocol from URL (ie: https://)
     SCRUBBED_SCM_URL=$(echo $SCM_URL | perl -pe 's/^.*\:\/\///;')
-    echo "  [STRIPPED]: $SCRUBBED_SCM_URL"
+    echo -e "\033[34m  [STRIPPED]:\033[0m $SCRUBBED_SCM_URL"
     prList "${SCRUBBED_SCM_URL}" "${DATE_START}" "${DATE_END}"
 done
 
-echo "Dir Contents..."
+echo -e "\033[34mDir Contents...\033[0m"
 ls -l
 
-echo "Line counts of log files..."
+echo -e "\033[34mLine counts of log files...\033[0m"
 wc -l *.csv
