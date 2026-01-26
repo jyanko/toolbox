@@ -62,9 +62,9 @@ PR_ALL=$(
     echo $PR_DRAFT       | jq '.[] | "\(.number)   ^ \(.title) ^ \(.reviewDecision) ^ \(.state) (DRAFT)"'   
 )
 
-echo "-----------------------------------------------" 
-echo "Pull Requests since: v$LAST_TAG ($LAST_DATE)"
-echo "-----------------------------------------------"
+echo -e "\033[34m-----------------------------------------------\033[0m" 
+echo -e "\033[34mPull Requests since: v$LAST_TAG ($LAST_DATE)\033[0m"
+echo -e "\033[34m-----------------------------------------------\033[0m"
 printf "$PR_ALL \n" | tr -d '"' | sort -t "^" -k3,4 | column -ts '^'
 
 

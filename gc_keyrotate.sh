@@ -8,9 +8,9 @@ function debugMessage() {
 }
 
 function printBanner() {
-    echo "------------------------------------------------------------"
-    echo "$1"
-    echo "------------------------------------------------------------"
+    echo -e "\033[34m------------------------------------------------------------\033[0m"
+    echo -e "\033[34m$1\033[0m"
+    echo -e "\033[34m------------------------------------------------------------\033[0m"
     
 }
 
@@ -104,11 +104,11 @@ else
 fi
 
 printBanner "Key Rotation Info"
-echo "Action : ${KEY_ACTION}"
-echo "Account: ${IAM_ACCT}"
-echo "Project: ${IAM_PROJECT}"
-echo "Deleted: ${OLD_KEY_ID}"
-echo "Created: ${KEY_ID}"
+echo -e "\033[34mAction :\033[0m ${KEY_ACTION}"
+echo -e "\033[34mAccount:\033[0m ${IAM_ACCT}"
+echo -e "\033[34mProject:\033[0m ${IAM_PROJECT}"
+echo -e "\033[34mDeleted:\033[0m ${OLD_KEY_ID}"
+echo -e "\033[34mCreated:\033[0m ${KEY_ID}"
 
 # SHOW matching content in the local ~/.config/gcloud dir 
 printBanner "Content of: ~/.config/gcloud/${IAM_PROJECT}*"

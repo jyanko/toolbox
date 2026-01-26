@@ -16,7 +16,7 @@ bing.com
 
 # loop through hosts pinging each and reporting result
 for H in ${HOSTNAMES[@]};do
-        ping -W2 -c1 $H  > /dev/null 2>&1 && echo "[PASS] $H" || echo "[FAIL] $H"
+        ping -W2 -c1 $H  > /dev/null 2>&1 && echo -e "\033[34m[PASS]\033[0m $H" || echo -e "\033[34m[FAIL]\033[0m $H"
 done
 
 

@@ -39,6 +39,6 @@ PR_TITLE=$(echo $PR_JSON | jq -r .title)
 PR_BRANCH=$(echo $PR_JSON | jq -r .headRefName)
 PR_STATE=$(echo $PR_JSON | jq -r .state)
 PR_URL=$(echo $PR_JSON | jq -r .url)
-PR_FILED="${PR_STATE}: PR-${PR_NUMBER} (${PR_REPO}) - ${PR_TITLE} / ${PR_BRANCH} \n* $PR_URL"
+PR_FILED="\033[34m${PR_STATE}:\033[0m PR-${PR_NUMBER} (${PR_REPO}) - ${PR_TITLE} / ${PR_BRANCH} \n* $PR_URL"
 
 printf "$PR_FILED \n"
