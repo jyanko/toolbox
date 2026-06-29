@@ -2,12 +2,13 @@
 This repo is a collection of useful scripts and utilities
 
 ```
-❯ tree
+❯ tree .
 .
 ├── check_jira.sh
 ├── gc_keyrotate.sh
 ├── gChange.sh
 ├── ghi.sh
+├── gmrSlug.sh
 ├── gprList.sh
 ├── gprSlug.sh
 ├── gStale.sh
@@ -20,13 +21,14 @@ This repo is a collection of useful scripts and utilities
 
 Descriptions for each utilty script should go here
 
-- check_jira.sh
-- gc_keyrotate.sh
-- gChange.sh
-- ghi.sh
-- gprList.sh
-- gprSlug.sh
-- gStale.sh
+- check_jira.sh    (jira  : script to check for jira pidfile, lockfile, running procs, etc.)
+- gc_keyrotate.sh  (gcloud: iam key rotation utility)
+- gChange.sh       (github: show changes since last relaase)
+- ghi.sh           (github: GitHub Issues Viewer)
+- gmrSlug.sh       (gitlab: merge request slug)
+- gprList.sh       (github: pull request list)
+- gprSlug.sh       (github: merge request slug)
+- gStale.sh        (github: show stale pull requests)
 - pdf_forensics.sh
 - pingCheck.sh
 
