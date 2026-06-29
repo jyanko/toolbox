@@ -21,6 +21,7 @@ This repo is a collection of useful scripts and utilities
 
 Descriptions for each utilty script...
 
+item              | description
 ---               | --- 
 `check_jira.sh`   | jira  : script to check for jira pidfile, lockfile, running procs, etc.)
 `gc_keyrotate.sh` | gcloud: iam key rotation utility
