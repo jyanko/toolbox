@@ -12,6 +12,7 @@ This repo is a collection of useful scripts and utilities
 ├── gprList.sh
 ├── gprSlug.sh
 ├── gStale.sh
+├── jiraSlug.sh
 ├── pdf_forensics.sh
 ├── pingCheck.sh
 └── README.md
@@ -29,6 +30,7 @@ Descriptions for each utilty script should go here
 - gprList.sh       (github: pull request list)
 - gprSlug.sh       (github: merge request slug)
 - gStale.sh        (github: show stale pull requests)
+- jiraSlug.sh      (jira  : format a ticket key + summary as a slug line)
 - pdf_forensics.sh
 - pingCheck.sh
 
