@@ -22,7 +22,7 @@ function debugMessage() {
 ################################################
 # do prereqs check
 PREREQS=( "gh" "git" )
-for REQ in ${PREREQS[*]};do
+for REQ in "${PREREQS[*]}";do
     which $REQ  >/dev/null 2>&1 && REQ_STATUS="true" || REQ_STATUS="false"
     if [ "$REQ_STATUS" = "false" ];then
         echo "NOT FOUND: $REQ -- gChange requires $REQ installed.  Exitting now..."
@@ -42,7 +42,7 @@ fi
 git fetch --all
 
 
-LAST_TAG=$(gh release list | egrep '^[0-9\.]+\s+Latest\s+.*$'   | awk '{print $1}')
+LAST_TAG=$(gh release list | grep -E '^[0-9\.]+\s+Latest\s+.*$'   | awk '{print $1}')
 # LAST_DATE=`git show $LAST_TAG --pretty=format:"%ad" --date=iso-strict`
 LAST_DATE=$(git show --date=iso-strict --format="DATE^%ad" $LAST_TAG | grep 'DATE^' | awk -F '^' '{print $2}')
 
