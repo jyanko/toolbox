@@ -24,14 +24,14 @@ Descriptions for each utilty script...
 
 item              | description
 ---               | --- 
-`check_jira.sh`   | jira  : script to check for jira pidfile, lockfile, running procs, etc.)
+`check_jira.sh`   | jira  : script to check for jira pidfile, lockfile, running procs, etc.
 `gc_keyrotate.sh` | gcloud: iam key rotation utility
-`gChange.sh `     | github: show changes since last relaase)
-`ghi.sh`          | github: GitHub Issues Viewer)
-`gmrSlug.sh`      | gitlab: merge request slug)
-`gprList.sh`      | github: pull request list)
-`gprSlug.sh`      | github: merge request slug)
-`gStale.sh `      | github: show stale pull requests)
+`gChange.sh `     | github: show changes since last relaase
+`ghi.sh`          | github: GitHub Issues Viewer
+`gmrSlug.sh`      | gitlab: merge request slug
+`gprList.sh`      | github: pull request list
+`gprSlug.sh`      | github: merge request slug
+`gStale.sh `      | github: show stale pull requests
 `jiraSlug.sh`     | jira  : format a ticket key + summary as a slug line
 `pdf_forensics.sh`| expose modifications to pdf files
 `pingCheck.sh`    | quick check if a set of defined hosts respond to ping
