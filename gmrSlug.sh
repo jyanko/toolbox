@@ -4,12 +4,11 @@
 # - useful for creating slugline for use in notes or posting to chat channels for review/status
 # - expects to be run from within a clone of the repo containing the specified MR number
 #
-# Formats a string like follows...
-#    **<state>**:   MR-<mrNumber> (<namespace>/<repo>) - <title> / <branch>
-#
+# Formats a string as follows to be used in generated text slug...
+#    MR: !<mrNumber>  (<namespace>/<repo>) - <mrTitle> 
+# 
 # Samples:
-#    **MERGED**: MR-123 (jyanko/toolbox) - TB-1 - new functions getBurgers() and getBeer() / TB-1-add_lunch_functions
-#      **OPEN**: MR-123 (jyanko/toolbox) - TB-2 - add breakpoints log entries / TB-2-log_breakpoints
+#    MR: !123 (jyanko/toolbox) - TB-1 - new functions getBurgers() and getBeer() 
 #
 # Dependencies
 #
