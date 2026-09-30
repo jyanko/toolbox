@@ -28,19 +28,26 @@
 #        gmrSlug.sh 131 upstream     # uses upstream (the source repo)
 #
 
+# TODO: test todo functionality
+
 if [ -z "$1" ]; then
     echo "ERROR: this script requires an MR number as input param (uses the 'glab' cmdline util to capture MR info)"
     echo
     echo "    EXAMPLES:"
     echo
-    echo "        $(basename $0) 131              # query MR against origin (your fork)"
-    echo "        $(basename $0) 131 upstream     # query MR against upstream repo"
+    echo "        $(basename $0) 131              # query MR against 'origin'   (default remote)"
+    echo "        $(basename $0) 131 upstream     # query MR against 'upstream' (any named remote)"
+
+	
     echo
     exit 1
 fi
 
 MR_NUMBER=$1
 REMOTE=${2:-origin}
+
+# echo "[INFO] MR_NUMBER: $MR_NUMBER"
+# echo "[INFO] REMOTE   : $REMOTE"
 
 # Validate that the specified remote actually exists
 if ! git remote | grep -q "^${REMOTE}$"; then
@@ -61,7 +68,8 @@ MR_TITLE=$(echo $MR_JSON | jq -r .title)
 MR_BRANCH=$(echo $MR_JSON | jq -r .source_branch)
 MR_STATE=$(echo $MR_JSON | jq -r .state | tr '[:lower:]' '[:upper:]' | sed 's/OPENED/OPEN/')
 MR_URL=$(echo $MR_JSON | jq -r .web_url)
-#MR_FILED="${MR_STATE}: MR-${MR_NUMBER} (${MR_REPO}) - ${MR_TITLE} / ${MR_BRANCH} \n* $MR_URL"
-MR_FILED="${MR_STATE}: Merge Request: ${MR_NUMBER} (${MR_REPO}) - ${MR_TITLE} \n- branch: ${MR_BRANCH} \n- link: $MR_URL"
+MR_FILED=":gitlab: :pull-request: MR: !${MR_NUMBER} (${MR_REPO}) - ${MR_TITLE} \n:sparkles: ${MR_URL}"
+
+
 
 printf "$MR_FILED \n"
